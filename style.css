@@ -1,0 +1,87 @@
+/* Reset and global variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --content-height: 0px;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-color: #005035;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    color: #a49665;
+    margin: 1rem 0;
+}
+
+/* Accordion container */
+.accordion {
+    width: 80%;
+    margin: 2rem auto;
+    line-height: 1.5;
+}
+
+/* Accordion labels (buttons) */
+.accordion-label {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1rem 0.5rem;
+    text-align: left;
+    background-color: #665105;
+    opacity: 0.7;
+    border: none;
+    color: white;
+    position: relative;
+    cursor: pointer;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Plus and minus icons */
+.accordion-label::after {
+    content: '+';
+    position: absolute;
+    right: 1rem;
+    font-size: 1.2rem;
+}
+
+.accordion-label.open::after {
+    content: '-';
+    font-size: 1.5rem;
+}
+
+/* Accordion content (collapsed by default) */
+.accordion-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+    background-color: #fff9e6;
+    padding: 0 0.5rem;
+    border-left: 2px solid #665105;
+    border-right: 2px solid #665105;
+}
+
+/* When open */
+.accordion-label.open {
+    opacity: 1;
+}
+
+.accordion-content.open {
+    height: var(--content-height);
+    overflow: auto;
+    padding: 1rem 0.5rem;
+}
